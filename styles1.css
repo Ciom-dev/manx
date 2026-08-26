@@ -27,7 +27,7 @@ body {
 .page-header {
   background: var(--red);
   color: var(--white);
-  min-height: 430px;
+  min-height: 730px;
   overflow: hidden;
   position: relative;
 }
