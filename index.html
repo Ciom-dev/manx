@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manx Gaelic | Yn Ghaelg</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/webp" href="Coat_of_arms_of_Isle_of_Man.svg.webp">
+</head>
+<body>
+  <header class="hero">
+    <nav class="navbar">
+      <button class="menu-button" id="menuButton" aria-label="Open navigation menu">☰</button>
+
+      <div class="brand">Yn Ghaelg</div>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#phrases">Phrases</a>
+        <a href="#quiz">Quiz</a>
+      </div>
+    </nav>
+
+    <div class="hero-content">
+      <div class="triskelion">☘</div>
+      <p class="eyebrow">A language from the Isle of Man</p>
+      <h1>Discover <span>Manx</span> Gaelic</h1>
+      <p class="hero-text">
+        Meet <em>Gaelg</em> — a beautifully revived Celtic language with a rich island story.
+      </p>
+      <a class="primary-button" href="#phrases">Learn a phrase <span>→</span></a>
+    </div>
+  </header>
+
+  <main>
+    <section class="intro-section" id="about">
+      <div>
+        <p class="section-label">01 / THE LANGUAGE</p>
+        <h2>A small language with a mighty spirit.</h2>
+      </div>
+      <div class="intro-copy">
+        <p>
+          Manx Gaelic is the traditional language of the Isle of Man, a small island
+          in the Irish Sea. After falling silent as a community language, it has been
+          brought back to life by passionate speakers, teachers, and learners.
+        </p>
+        <button class="outline-button" id="factButton">Reveal a fun fact</button>
+        <p class="fact" id="fact"></p>
+      </div>
+    </section>
+
+    <section class="phrases-section" id="phrases">
+      <p class="section-label">02 / SAY HELLO</p>
+      <h2>Useful words in Manx</h2>
+      <div class="phrase-grid">
+        <button class="phrase-card" data-manx="Moghrey mie!" data-meaning="Good morning!">
+          <span>Good morning</span>
+          <strong>Moghrey mie!</strong>
+          <small>Click to reveal translation</small>
+        </button>
+        <button class="phrase-card" data-manx="Gura mie ayd" data-meaning="Thank you">
+          <span>Thank you</span>
+          <strong>Gura mie ayd</strong>
+          <small>Click to reveal translation</small>
+        </button>
+        <button class="phrase-card" data-manx="Slaynt!" data-meaning="Cheers! / Good health!">
+          <span>Cheers</span>
+          <strong>Slaynt!</strong>
+          <small>Click to reveal translation</small>
+        </button>
+      </div>
+
+      <a class="primary-button learn-more-button" href="page1.html">
+        Want to learn more? <span>→</span>
+      </a>
+    </section>
+
+    <section class="quiz-section" id="quiz">
+      <div class="quiz-card">
+        <p class="section-label">03 / QUICK QUIZ</p>
+        <h2>What does “Slaynt!” mean?</h2>
+        <div class="answers">
+          <button class="answer-button" data-correct="false">Good night</button>
+          <button class="answer-button" data-correct="true">Cheers!</button>
+          <button class="answer-button" data-correct="false">Welcome</button>
+        </div>
+        <p class="quiz-result" id="quizResult"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Ta mee graihagh erriu — <span>I love you</span></p>
+    <button id="themeButton">Toggle island night</button>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
