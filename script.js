@@ -3,6 +3,9 @@ const navLinks = document.getElementById("navLinks");
 const factButton = document.getElementById("factButton");
 const fact = document.getElementById("fact");
 const themeButton = document.getElementById("themeButton");
+const quizQuestion = document.getElementById("quizQuestion");
+const quizAnswers = document.getElementById("quizAnswers");
+const quizResult = document.getElementById("quizResult");
 
 menuButton.addEventListener("click", () => {
   navLinks.classList.toggle("open");
@@ -32,19 +35,73 @@ factButton.addEventListener("click", () => {
   factButton.textContent = "Show another fact";
 });
 
-document.querySelectorAll(".answer-button").forEach((button) => {
-  button.addEventListener("click", () => {
-    const result = document.getElementById("quizResult");
+const quizQuestions = [
+  {
+    word: "Slaynt!",
+    correct: "Cheers!",
+    answers: ["Good night", "Cheers!", "Welcome"]
+  },
+  {
+    word: "Moghrey",
+    correct: "Morning",
+    answers: ["Morning", "House", "Love"]
+  },
+  {
+    word: "Graih",
+    correct: "Love",
+    answers: ["Friend", "Love", "Day"]
+  },
+  {
+    word: "Mannin",
+    correct: "The Isle of Man",
+    answers: ["The Isle of Man", "Thank you", "Good"]
+  }
+];
 
-    if (button.dataset.correct === "true") {
-      result.textContent = "✓ Yindyss! That's correct.";
-      result.style.color = "#f4c95d";
-    } else {
-      result.textContent = "Not quite — try another answer!";
-      result.style.color = "#ffb3b3";
-    }
+let currentQuestion = 0;
+let quizFinished = false;
+
+function showQuizQuestion() {
+  const question = quizQuestions[currentQuestion];
+
+  quizQuestion.textContent = `What does “${question.word}” mean?`;
+  quizAnswers.innerHTML = "";
+  quizResult.textContent = "";
+
+  question.answers.forEach((answer) => {
+    const button = document.createElement("button");
+
+    button.className = "answer-button";
+    button.textContent = answer;
+    button.dataset.correct = answer === question.correct;
+
+    button.addEventListener("click", () => {
+      if (quizFinished) return;
+
+      if (button.dataset.correct === "true") {
+        if (currentQuestion === quizQuestions.length - 1) {
+          quizFinished = true;
+          quizResult.innerHTML =
+            '✓ Yindyss! That’s correct. <a href="page1.html">Check the vocabulary page to learn more.</a>';
+
+          document.querySelectorAll(".answer-button").forEach((answerButton) => {
+            answerButton.disabled = true;
+          });
+        } else {
+          quizResult.textContent = "✓ Yindyss! That's correct.";
+          currentQuestion++;
+          setTimeout(showQuizQuestion, 700);
+        }
+      } else {
+        quizResult.textContent = "Not quite — try another answer!";
+      }
+    });
+
+    quizAnswers.appendChild(button);
   });
-});
+}
+
+showQuizQuestion();
 
 themeButton.addEventListener("click", () => {
   document.body.classList.toggle("night");
