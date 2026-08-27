@@ -169,7 +169,6 @@ h1 span {
 
 .primary-button,
 .outline-button,
-#themeButton,
 .answer-button {
   border: 0;
   cursor: pointer;
@@ -188,8 +187,7 @@ h1 span {
 }
 
 .primary-button:hover,
-.outline-button:hover,
-#themeButton:hover {
+.outline-button:hover {
   transform: translateY(-3px);
 }
 
@@ -369,29 +367,48 @@ footer {
   background: var(--ink);
   color: var(--white);
   display: flex;
+  gap: 20px;
   justify-content: space-between;
-  padding: 28px max(24px, calc((100% - 1072px) / 2));
+  padding: 18px max(24px, calc((100% - 1072px) / 2));
+}
+
+footer p {
+  margin: 0;
 }
 
 footer span {
   color: var(--gold);
 }
 
-#themeButton {
-  background: var(--gold);
-  color: var(--ink);
-  padding: 10px 15px;
+.footer-brand {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  gap: 3px;
+  text-align: center;
 }
 
-body.night {
-  --cream: #17141c;
-  --ink: #fff8e9;
-  --muted: #d1bdbe;
-  --white: #28202b;
+.footer-brand img {
+  background: var(--white);
+  border: 3px solid var(--gold);
+  border-radius: 50%;
+  height: 48px;
+  object-fit: contain;
+  padding: 4px;
+  width: 48px;
 }
 
-body.night .phrases-section {
-  border-color: #40313d;
+.footer-brand strong {
+  color: var(--gold);
+  font-family: "Playfair Display", serif;
+  font-size: 0.95rem;
+}
+
+.footer-brand small {
+  color: var(--white);
+  font-size: 0.68rem;
+  opacity: 0.75;
 }
 
 @media (max-width: 700px) {
@@ -424,8 +441,11 @@ body.night .phrases-section {
   }
 
   footer {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 18px;
+    align-items: center;
+    padding: 18px 16px;
+  }
+
+  footer p {
+    font-size: 0.85rem;
   }
 }
