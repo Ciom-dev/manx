@@ -2,7 +2,6 @@ const menuButton = document.getElementById("menuButton");
 const navLinks = document.getElementById("navLinks");
 const factButton = document.getElementById("factButton");
 const fact = document.getElementById("fact");
-const themeButton = document.getElementById("themeButton");
 const quizQuestion = document.getElementById("quizQuestion");
 const quizAnswers = document.getElementById("quizAnswers");
 const quizResult = document.getElementById("quizResult");
@@ -102,10 +101,3 @@ function showQuizQuestion() {
 }
 
 showQuizQuestion();
-
-themeButton.addEventListener("click", () => {
-  document.body.classList.toggle("night");
-  themeButton.textContent = document.body.classList.contains("night")
-    ? "Return to daylight"
-    : "Toggle island night";
-});
