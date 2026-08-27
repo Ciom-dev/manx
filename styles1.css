@@ -35,12 +35,12 @@ body {
 .page-header::before {
   background: var(--white);
   content: "";
-  height: 42px;
+  height: 36px;
   left: -10%;
   opacity: 0.9;
   position: absolute;
-  top: 315px;
-  transform: rotate(-15deg);
+  top: 390px;
+  transform: rotate(-8deg);
   width: 125%;
   z-index: 0;
 }
@@ -283,13 +283,58 @@ h2 {
 }
 
 footer {
+  align-items: center;
   background: var(--ink);
   color: var(--white);
-  padding: 28px max(24px, calc((100% - 1072px) / 2));
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
+  min-height: 92px;
+  padding: 12px max(24px, calc((100% - 1072px) / 2));
+}
+
+footer p {
+  flex: 1 1 auto;
+  margin: 0;
+  text-align: left;
 }
 
 footer span {
   color: var(--gold);
+}
+
+.footer-brand {
+  align-items: center;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 2px;
+  margin-left: auto;
+  text-align: center;
+}
+
+.footer-brand img {
+  background: var(--white);
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  height: 42px;
+  object-fit: contain;
+  padding: 3px;
+  width: 42px;
+}
+
+.footer-brand strong {
+  color: var(--gold);
+  font-family: "Playfair Display", serif;
+  font-size: 0.82rem;
+  line-height: 1;
+}
+
+.footer-brand small {
+  color: var(--white);
+  font-size: 0.6rem;
+  line-height: 1;
+  opacity: 0.75;
 }
 
 @media (max-width: 700px) {
@@ -298,7 +343,7 @@ footer span {
   }
 
   .page-header::before {
-    top: 385px;
+    top: 450px;
   }
 
   .page-header::after {
@@ -314,5 +359,28 @@ footer span {
 
   .word-list {
     grid-template-columns: 1fr;
+  }
+
+  footer {
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+  }
+
+  footer p {
+    font-size: 0.78rem;
+  }
+
+  .footer-brand img {
+    height: 36px;
+    width: 36px;
+  }
+
+  .footer-brand strong {
+    font-size: 0.72rem;
+  }
+
+  .footer-brand small {
+    font-size: 0.55rem;
   }
 }
