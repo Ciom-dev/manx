@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Manx Gaelic | Yn Ghaelg</title>
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="enhancements.css" />
   <link rel="icon" href="Coat_of_arms_of_Isle_of_Man.svg.webp" />
 </head>
 <body>
@@ -32,22 +33,46 @@
       </p>
       <a class="primary-button" href="#phrases">Learn a phrase <span>→</span></a>
     </div>
+    <div class="floating-words" aria-label="Manx vocabulary highlights">
+        <span class="word-bubble bubble-one">Mannin</span>
+        <span class="word-bubble bubble-two">Slaynt!</span>
+        <span class="word-bubble bubble-three">Graih</span>
+        <span class="word-bubble bubble-four">Moghrey mie!</span>
+      </div>
+
   </header>
 
   <main>
-    <section class="intro-section" id="about">
-      <div>
+   <section class="intro-section" id="about">
+      <div class="intro-heading">
         <p class="section-label">01 / THE LANGUAGE</p>
         <h2>A small language with a mighty spirit.</h2>
+        <div class="heading-line"></div>
       </div>
+
       <div class="intro-copy">
         <p>
           Manx Gaelic is the traditional language of the Isle of Man, a small island
           in the Irish Sea. After falling silent as a community language, it has been
           brought back to life by passionate speakers, teachers, and learners.
         </p>
-        <button class="outline-button" id="factButton">Reveal a fun fact</button>
-        <p class="fact" id="fact"></p>
+
+        <div class="language-stats">
+          <div>
+            <strong>1</strong>
+            <span>Island home</span>
+          </div>
+          <div>
+            <strong>3</strong>
+            <span>Related Gaelic languages</span>
+          </div>
+          <div>
+            <strong>∞</strong>
+            <span>Stories to discover</span>
+          </div>
+        </div>
+     <button class="outline-button" id="factButton">Reveal a fun fact</button>
+        <p class="fact" id="fact" aria-live="polite"></p>
       </div>
     </section>
 
@@ -76,6 +101,15 @@
         Want to learn more? <span>→</span>
       </a>
     </section>
+
+     <section class="explore-strip">
+      <div>
+        <p class="section-label">KEEP LEARNING</p>
+        <h2>Build your Manx vocabulary one step at a time.</h2>
+      </div>
+      <a class="primary-button" href="page2.html">Choose a topic <span>→</span></a>
+    </section>
+
 
     <section class="quiz-section" id="quiz">
       <div class="quiz-card">
