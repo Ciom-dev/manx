@@ -8,6 +8,19 @@ const quizResult = document.getElementById("quizResult");
 
 menuButton.addEventListener("click", () => {
   navLinks.classList.toggle("open");
+
+  const isOpen = navLinks.classList.contains("open");
+  menuButton.setAttribute(
+    "aria-label",
+    isOpen ? "Close navigation menu" : "Open navigation menu"
+  );
+});
+
+document.querySelectorAll(".nav-links a").forEach((link) => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("open");
+    menuButton.setAttribute("aria-label", "Open navigation menu");
+  });
 });
 
 document.querySelectorAll(".phrase-card").forEach((card) => {
@@ -16,7 +29,9 @@ document.querySelectorAll(".phrase-card").forEach((card) => {
     const meaning = card.dataset.meaning;
     const instruction = card.querySelector("small");
 
-    instruction.textContent = isActive ? meaning : "Click to reveal translation";
+    instruction.textContent = isActive
+      ? meaning
+      : "Click to reveal translation";
   });
 });
 
@@ -30,7 +45,15 @@ let factIndex = 0;
 
 factButton.addEventListener("click", () => {
   fact.textContent = facts[factIndex];
-  factIndex = (factIndex + 1) % facts.length;
+
+  if (factIndex === facts.length - 1) {
+    factButton.textContent = "All facts revealed!";
+    factButton.disabled = true;
+    factButton.setAttribute("aria-disabled", "true");
+    return;
+  }
+
+  factIndex++;
   factButton.textContent = "Show another fact";
 });
 
@@ -71,6 +94,7 @@ function showQuizQuestion() {
     const button = document.createElement("button");
 
     button.className = "answer-button";
+    button.type = "button";
     button.textContent = answer;
     button.dataset.correct = answer === question.correct;
 
@@ -93,11 +117,33 @@ function showQuizQuestion() {
         }
       } else {
         quizResult.textContent = "Not quite — try another answer!";
+        button.disabled = true;
       }
     });
 
     quizAnswers.appendChild(button);
   });
 }
+
+const revealSections = document.querySelectorAll(
+  ".intro-section, .phrases-section, .explore-strip, .quiz-section"
+);
+
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.15 }
+);
+
+revealSections.forEach((section) => {
+  section.classList.add("reveal-section");
+  revealObserver.observe(section);
+});
 
 showQuizQuestion();
