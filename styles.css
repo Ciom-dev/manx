@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700;800&display=swap");
 
 :root {
   --red: #c8102e;
@@ -24,50 +24,50 @@ body {
 }
 
 .hero {
-  min-height: 650px;
-  color: var(--white);
-  overflow: hidden;
   position: relative;
+  min-height: 650px;
+  overflow: hidden;
+  color: var(--white);
   background: var(--red);
 }
 
 .hero::before {
-  background: var(--white);
-  content: "";
-  height: 48px;
-  left: -10%;
-  opacity: 0.95;
   position: absolute;
   top: 360px;
-  transform: rotate(-8deg);
-  width: 125%;
+  left: -10%;
   z-index: 0;
+  width: 125%;
+  height: 48px;
+  content: "";
+  opacity: 0.95;
+  background: var(--white);
+  transform: rotate(-8deg);
 }
 
 .hero::after {
+  position: absolute;
+  right: 7%;
+  bottom: -120px;
+  z-index: 0;
+  width: 330px;
+  height: 330px;
+  content: "";
+  opacity: 0.18;
+  pointer-events: none;
   background: var(--crest-image) center / contain no-repeat;
   border: 10px solid var(--gold);
   border-radius: 50%;
-  bottom: -120px;
-  content: "";
-  height: 330px;
-  opacity: 0.18;
-  pointer-events: none;
-  position: absolute;
-  right: 7%;
-  width: 330px;
-  z-index: 0;
 }
 
 .navbar {
-  align-items: center;
-  display: flex;
-  gap: 18px;
-  margin: auto;
-  max-width: 1120px;
-  padding: 28px 24px;
   position: relative;
   z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  max-width: 1120px;
+  margin: auto;
+  padding: 28px 24px;
 }
 
 .brand {
@@ -77,15 +77,15 @@ body {
 }
 
 .nav-links {
-  background: var(--dark-red);
+  position: absolute;
+  top: 78px;
+  left: 24px;
+  z-index: 3;
   display: none;
   flex-direction: column;
   gap: 16px;
-  left: 24px;
   padding: 20px;
-  position: absolute;
-  top: 78px;
-  z-index: 3;
+  background: var(--dark-red);
 }
 
 .nav-links.open {
@@ -104,31 +104,31 @@ body {
 }
 
 .menu-button {
-  background: transparent;
-  border: 0;
-  color: var(--white);
-  cursor: pointer;
   display: block;
+  padding: 0;
+  color: var(--white);
   font-size: 1.8rem;
   line-height: 1;
-  padding: 0;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
 }
 
 .hero-content {
-  margin: 80px auto;
-  max-width: 1120px;
-  padding: 0 24px;
   position: relative;
   z-index: 1;
+  max-width: 1120px;
+  margin: 80px auto;
+  padding: 0 24px;
 }
 
 .triskelion {
+  width: 92px;
+  height: 92px;
+  color: transparent;
   background: var(--white) var(--crest-image) center / contain no-repeat;
   border: 5px solid var(--gold);
   border-radius: 50%;
-  color: transparent;
-  height: 92px;
-  width: 92px;
 }
 
 .eyebrow,
@@ -140,50 +140,50 @@ body {
 }
 
 .eyebrow {
-  color: var(--gold);
   margin-top: 25px;
+  color: var(--gold);
 }
 
 h1,
 h2 {
+  margin: 15px 0;
   font-family: "Playfair Display", serif;
   line-height: 1.05;
-  margin: 15px 0;
 }
 
 h1 {
-  font-size: clamp(3.5rem, 8vw, 7.5rem);
   max-width: 800px;
+  font-size: clamp(3.5rem, 8vw, 7.5rem);
 }
 
 h1 span {
-  color: var(--gold);
   display: block;
+  color: var(--gold);
 }
 
 .hero-text {
+  max-width: 490px;
   font-size: 1.15rem;
   line-height: 1.7;
-  max-width: 490px;
 }
 
 .primary-button,
 .outline-button,
 .answer-button {
-  border: 0;
-  cursor: pointer;
   font: inherit;
   font-weight: 700;
+  cursor: pointer;
+  border: 0;
   transition: 0.25s ease;
 }
 
 .primary-button {
-  background: var(--gold);
-  color: var(--ink);
   display: inline-block;
   margin-top: 20px;
   padding: 16px 22px;
+  color: var(--ink);
   text-decoration: none;
+  background: var(--gold);
 }
 
 .primary-button:hover,
@@ -192,13 +192,13 @@ h1 span {
 }
 
 .primary-button span {
-  font-size: 1.3rem;
   margin-left: 20px;
+  font-size: 1.3rem;
 }
 
 main {
-  margin: auto;
   max-width: 1120px;
+  margin: auto;
 }
 
 .intro-section,
@@ -208,8 +208,8 @@ main {
 
 .intro-section {
   display: grid;
-  gap: 70px;
   grid-template-columns: 1fr 1fr;
+  gap: 70px;
 }
 
 .section-label {
@@ -222,24 +222,24 @@ h2 {
 }
 
 .intro-copy {
+  padding-top: 30px;
   color: var(--muted);
   font-size: 1.1rem;
   line-height: 1.8;
-  padding-top: 30px;
 }
 
 .outline-button {
-  background: transparent;
-  border: 2px solid var(--red);
-  color: var(--red);
   margin-top: 15px;
   padding: 13px 18px;
+  color: var(--red);
+  background: transparent;
+  border: 2px solid var(--red);
 }
 
 .fact {
+  min-height: 28px;
   color: var(--red);
   font-weight: 700;
-  min-height: 28px;
 }
 
 .phrases-section {
@@ -248,48 +248,49 @@ h2 {
 
 .phrase-grid {
   display: grid;
-  gap: 18px;
   grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
   margin-top: 40px;
 }
 
 .phrase-card {
+  position: relative;
+  min-height: 190px;
+  padding: 28px;
+  overflow: hidden;
+  color: var(--ink);
+  text-align: left;
+  cursor: pointer;
   background: var(--white);
   border: 0;
   box-shadow: 0 8px 25px rgba(64, 22, 28, 0.08);
-  color: var(--ink);
-  cursor: pointer;
-  min-height: 190px;
-  padding: 28px;
-  position: relative;
-  text-align: left;
   transition: 0.25s ease;
 }
 
 .phrase-card::after {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 58px;
+  height: 58px;
+  content: "";
+  opacity: 0.22;
   background: var(--crest-image) center / contain no-repeat;
   border: 3px solid var(--gold);
   border-radius: 50%;
-  content: "";
-  height: 58px;
-  opacity: 0.22;
-  position: absolute;
-  right: 18px;
-  top: 18px;
-  width: 58px;
 }
 
 .phrase-card:hover,
 .phrase-card.active {
-  background: var(--red);
   color: var(--white);
+  background: var(--red);
   transform: translateY(-7px);
 }
 
 .phrase-card:hover::after,
 .phrase-card.active::after {
-  background-color: var(--white);
   opacity: 0.85;
+  background-color: var(--white);
 }
 
 .phrase-card span,
@@ -310,10 +311,10 @@ h2 {
 
 .phrase-card strong {
   display: block;
-  font-family: "Playfair Display", serif;
-  font-size: 1.65rem;
   margin: 25px 0;
   padding-right: 65px;
+  font-family: "Playfair Display", serif;
+  font-size: 1.65rem;
 }
 
 .phrase-card small {
@@ -326,10 +327,10 @@ h2 {
 }
 
 .quiz-card {
-  background: var(--dark-red);
-  color: var(--white);
   padding: 55px;
+  color: var(--white);
   text-align: center;
+  background: var(--dark-red);
 }
 
 .quiz-card .section-label {
@@ -343,14 +344,14 @@ h2 {
 .answers {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
   justify-content: center;
+  gap: 12px;
 }
 
 .answer-button {
-  background: var(--white);
-  color: var(--dark-red);
   padding: 14px 22px;
+  color: var(--dark-red);
+  background: var(--white);
 }
 
 .answer-button:hover {
@@ -358,19 +359,19 @@ h2 {
 }
 
 .quiz-result {
-  font-weight: 700;
   min-height: 25px;
+  font-weight: 700;
 }
 
 footer {
-  align-items: center;
-  background: var(--ink);
-  color: var(--white);
   display: flex;
-  gap: 24px;
+  align-items: center;
   justify-content: space-between;
+  gap: 24px;
   min-height: 92px;
   padding: 12px max(24px, calc((100% - 1072px) / 2));
+  color: var(--white);
+  background: var(--ink);
 }
 
 footer p {
@@ -384,25 +385,24 @@ footer span {
 }
 
 .footer-brand {
-  align-items: center;
   display: flex;
   flex: 0 0 auto;
   flex-direction: column;
+  align-items: center;
   gap: 2px;
   margin-left: auto;
   text-align: center;
 }
 
 .footer-brand img {
+  width: 42px;
+  height: 42px;
+  padding: 3px;
+  object-fit: contain;
   background: var(--white);
   border: 2px solid var(--gold);
   border-radius: 50%;
-  height: 42px;
-  object-fit: contain;
-  padding: 3px;
-  width: 42px;
 }
-
 
 .footer-brand strong {
   color: var(--gold);
@@ -428,10 +428,10 @@ footer span {
   }
 
   .hero::after {
-    bottom: -85px;
-    height: 230px;
     right: -55px;
+    bottom: -85px;
     width: 230px;
+    height: 230px;
   }
 
   .hero-content {
@@ -458,8 +458,8 @@ footer span {
   }
 
   .footer-brand img {
-    height: 36px;
     width: 36px;
+    height: 36px;
   }
 
   .footer-brand strong {
